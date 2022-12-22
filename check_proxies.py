@@ -71,19 +71,17 @@ class Setup:
             
         else:pass
 
-    def prox_queue():
-        que = queue.Queue()
+    que = queue.Queue()
 
-        with open("proxies.txt", "r") as f:
-            proxies = f.read().split("\n")
-            for p in proxies:
-                que.put(p)
-        return que
+    with open("proxies.txt", "r") as f:
+        proxies = f.read().split("\n")
+        for p in proxies:
+            que.put(p)
 
 def check_proxies():
     Clear()
-    while not Setup.prox_queue().empty():
-        proxy = Setup.prox_queue().get()
+    while not Setup.que.empty():
+        proxy = Setup.que.get()
         try:
             req = requests.get("http://ipinfo.io/json", proxies= {"http": proxy, "https": proxy})
         except:
