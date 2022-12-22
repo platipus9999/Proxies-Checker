@@ -27,7 +27,7 @@ def main():
 
         Title(f"Nows@Platipus ~ Proxz $ Proxies Checker [ Proxies from the sources: ({num_proxies}) ]")
         
-        t2 = threading.Thread(target=Setup.prox_queue)
+        t2 = threading.Thread(target=Setup)
         t2.start()
         t2.join()
         thread = int(input("Amout of Thread > "))
