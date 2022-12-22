@@ -8,3 +8,5 @@ Proxies checker using requests
 2. Run the `main.py` file and enter the amount of threads.
 
 --------------------------------------
+### Preview
+<img src="https://github.com/platipus9999/Proxies-Checker/blob/main/image.png">
